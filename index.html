@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- bootstrap css -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- main css -->
+    <link rel="stylesheet" href="css/main.css">
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="css/all.css">
+    <title>budget app</title>
+    <style>
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-11 mx-auto pt-3">
+                <!-- title -->
+                <h3 class="text-uppercase mb-4">budget app</h3>
+                <div class="row">
+                    <div class="col-md-5 my-3">
+                        <!-- budget feedback -->
+                        <div class="budget-feedback alert alert-danger text-capitalize"></div>
+                        <!-- budget form -->
+                        <form id="budget-form" class=" budget-form">
+                            <h5 class="text-capitalize">please enter your budget</h5>
+                            <div class="form-group">
+                                <input type="number" class="form-control budget-input" id="budget-input">
+                            </div>
+                            <!-- submit button -->
+                            <button type="submit" class="btn text-capitalize budget-submit"
+                                id="budget-submit">calculate</button>
+                        </form>
+                    </div>
+                    <div class="col-md-7">
+                        <!-- app info -->
+                        <div class="row my-3">
+                            <div class="col-4 text-center mb-2">
+                                <h6 class="text-uppercase info-title">budget</h6>
+                                <span class="budget-icon"><i class="fas fa-money-bill-alt"></i></span>
+                                <h4 class="text-uppercase mt-2 budget" id="budget"><span>$ </span><span
+                                        id="budget-amount">0</span></h4>
+                            </div>
+                            <div class="col-4 text-center">
+                                <h6 class="text-uppercase info-title">expenses</h6>
+                                <span class="expense-icon"><i class="far fa-credit-card"></i></span>
+                                <h4 class="text-uppercase mt-2 expense" id="expense"><span>$ </span><span
+                                        id="expense-amount">0</span></h4>
+                            </div>
+                            <div class="col-4 text-center">
+                                <h6 class="text-uppercase info-title">balance</h6>
+                                <span class="balance-icon"><i class="fas fa-dollar-sign"></i></span>
+                                <h4 class="text-uppercase mt-2 balance" id="balance"> <span>$ </span><span
+                                        id="balance-amount">0</span></h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-5 my-3">
+                        <!-- expense feedback -->
+                        <div class="expense-feedback alert alert-danger text-capitalize"></div>
+                        <!-- expense form -->
+                        <form id="expense-form" class="expense-form ">
+                            <h5 class="text-capitalize h5">please enter your expense</h5>
+                            <div class="form-group form-group-edit">
+                                <input type="text" class="form-control expense-input" id="expense-input">
+                            </div>
+                            <h5 class="text-capitalize h5">please enter expense amount</h5>
+                            <div class="form-group form-group-edit">
+                                <input type="number" class="form-control expense-input" id="amount-input">
+                            </div>
+                            <div class="delete-feedbak feedback">
+                                <h1> Do you realy want to delete this expense?</h1>
+                                <ul class="list-group mt-5 mb-5">
+                                    <li class="list-group-item"><strong class="light">Expense Title: <span
+                                                class="title-data" style="color:red; font-weight:700"></span></strong>
+                                    </li>
+                                    <li class="list-group-item"><strong class="light">Expense Value: <span
+                                                class="value-data" style="color:red; font-weight:700"></span></strong>
+                                    </li>
+                                </ul>
+                            </div>
+                            <!-- submit button -->
+                            <div class="d-flex btnDiv">
+                                <button type="submit" class="btn btn-outline-info text-capitalize expense-submit"
+                                    id="expense-submit">add
+                                    expense</button>
+                                <button type="submit" class="btn btn-warning text-capitalize editBtn"
+                                    id="expense-edit">Edit Expense</button>
+                                <button type="submit" class="btn btn-danger text-capitalize deleteBtn"
+                                    id="expense-delete">Delete Expense</button>
+                                <button type="submit" class="btn btn-secondary ml-2 text-capitalize backBtn"
+                                    id="expense-back">Back</button>
+                                <button type="submit" class="btn btn-primary ml-2 text-capitalize cancelkBtn"
+                                    id="cancel-back">Cancel</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-md-7 my-3">
+                        <!-- expense list -->
+                        <div class="expense-list" id="expense-list">
+
+                            <div class="expense-list__info d-flex justify-content-between text-capitalize">
+                                <h5 class="list-item">expense title</h5>
+                                <h5 class="list-item">expense value</h5>
+                                <h5 class="list-item"></h5>
+                            </div>
+                            <!-- single expense -->
+                            <div class="expense-expense">
+                                <!-- "expense-item", "row", "d-flex", "justify-content-between"-->
+                                <div class="expense-item row d-flex justify-content-between">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- end of single expense -->
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+
+
+
+    <!-- jquery -->
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <!-- bootstrap js -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- script js -->
+    <script src="js/app.js"></script>
+</body>
+
+</html>
+
+<h6 class="expense-title mb-0 text-uppercase list-item"></h6>
+
+<!--
+const h6 = document.createElement('h6');
+h6.classList.add("expense-title", "mb-0", "text-uppercase", "list-item");
+h6.appendChild(document.createTextNode(list.title));
+listItem.appendChild(h6);
+const h5 = document.createElement('h5');
+h5.classList.add("expense-amount", "mb-0", "list-item");
+h5.appendChild(document.createTextNode(list.amount));
+listItem.appendChild(h5);
+
+const div = document.createElement('div');
+div.classList.add("expense-icons", "list-item");
+const aEdit = document.createElement("a");
+aEdit.classList.add("edit-icon", "mx-2");
+aEdit.setAttribute('data-id', list.id);
+aEdit.innerHTML = "<i class='fas fa-edit'></i>";
+div.appendChild(aEdit);
+
+const aDelete = document.createElement("a");
+aDelete.classList.add("delete-icon");
+aDelete.setAttribute('data-id', list.id);
+aDelete.innerHTML = "<i class='fas fa-trash'></i>";
+div.appendChild(aDelete);
+listItem.appendChild(div);
+-->
